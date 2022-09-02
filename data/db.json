@@ -1,0 +1,34 @@
+{
+  "blogs": [
+    {
+      "title": "tomato",
+      "body": "Buy new fresh tomato from FarmVilla. local farm ",
+      "author": "yagya",
+      "id": 5
+    },
+    {
+      "title": "Apple",
+      "body": "Apple is a fruit. apple keeps doctor awya eat apple everyday.",
+      "author": "mario",
+      "id": 7
+    },
+    {
+      "title": "MacBook14 ",
+      "body": "Apple lunches new 2022 macBook ,with the most coolest,fastest, powerful- machine .",
+      "author": "yoshi",
+      "id": 8
+    },
+    {
+      "title": "React WebDev",
+      "body": "awesome to learn and  make react web application ",
+      "author": "mario",
+      "id": 9
+    },
+    {
+      "title": "Navin sapkota",
+      "body": "he can code with in 15days of practice",
+      "author": "mario",
+      "id": 10
+    }
+  ]
+}

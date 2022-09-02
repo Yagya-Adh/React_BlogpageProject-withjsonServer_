@@ -1,0 +1,26 @@
+import { useState } from "react";
+
+const Home = () => {
+  // let name = "mario";
+  //using hooks to change state
+  const [name, setName] = useState("mario");
+
+  const handleClick = () => {
+    //console.log("hello, ninjas");
+    // let name = "luigi";
+    // console.log(name);
+
+    setName("luigi");
+    console.log(name);
+  };
+
+  return (
+    <div className="home">
+      <h2> Homepage </h2>
+      <p>{name}</p>
+      <button onClick={handleClick}>Click me</button>
+    </div>
+  );
+};
+
+export default Home;

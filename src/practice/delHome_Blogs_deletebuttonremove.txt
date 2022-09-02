@@ -1,0 +1,75 @@
+
+============================================================
+//Blogs.js
+
+
+
+const BlogList = ({ blogs, title, handleDelete }) => {
+  // const blogs = props.blogs;
+  // const title = props.title;
+
+  return (
+    <div className="blog-list">
+      <h2>{title}</h2>
+      {blogs.map((blog) => (
+        <div className="blog-preview" key={blog.id}>
+          <h2>{blog.title}</h2>
+          <p>written by {blog.author}</p>{" "}
+          <button onClick={() => handleDelete(blog.id)}>delete blog</button>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default BlogList;
+
+
+
+================================================================
+//Home.js
+
+
+import { useState, useEffect } from "react";
+import BlogList from "./BlogList";
+
+const Home = () => {
+  const [blogs, setBlogs] = useState(null);
+
+  const handleDelete = (id) => {
+    const newBlogs = blogs.filter((blog) => blog.id !== id);
+    setBlogs(newBlogs);
+  };
+
+  // useEffect hook
+
+  useEffect(() => {
+    fetch("http://localhost:8000/blogs")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        // console.log(data);
+        // now we can update setBlogs() by passing data  from jsonserver as below.
+        setBlogs(data);
+      });
+  }, []);
+  // useEffect dependencies  as syntax::  useEffect(function , [dependencies])
+  return (
+    <div className="home">
+      {blogs && (
+        <BlogList
+          blogs={blogs}
+          title="All Blogs!"
+          handleDelete={handleDelete}
+        />
+      )}
+    </div>
+  );
+};
+
+export default Home;
+
+
+
+
